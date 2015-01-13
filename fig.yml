@@ -1,0 +1,20 @@
+db:
+  image: postgres:9.4
+  ports:
+    - "5432"
+dashboard:
+  build: ./puppet-dashboard
+  hostname: dashboard
+  environment:
+    - RACK_ENV=production
+  command: /usr/local/bin/run.sh
+  ports:
+    - "3000:3000"
+  links:
+    - db
+agent1:
+  build: ./puppet-node
+  hostname: agent1
+  command: "/bin/sh -c 'while /bin/true; do sleep 10; done'"
+  links:
+    - dashboard

@@ -1,0 +1,23 @@
+production:
+  database: dashboard_production
+  username: postgres
+  password:
+  encoding: utf8
+  adapter: postgresql
+  host: db
+
+development:
+  database: dashboard_development
+  username: postgres
+  password:
+  encoding: utf8
+  adapter: postgresql
+  host: db
+
+test:
+  database: dashboard_test
+  username: postgres
+  password:
+  encoding: utf8
+  adapter: postgresql
+  host: db
